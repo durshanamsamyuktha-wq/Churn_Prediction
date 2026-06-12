@@ -159,7 +159,7 @@ http://127.0.0.1:5000
 
 ## Durshanam Samyuktha  
 
-🎓 Aspiring Data Scientist & Machine Learning Developer  
+🎓 Aspiring Data Analyst & Machine Learning Developer  
 
 📧 Email  
 durshanamsamyuktha@gmail.com  
@@ -171,7 +171,7 @@ durshanamsamyuktha@gmail.com
 https://www.linkedin.com/in/durshanam-samyuktha-a11204410/
 
 🔗 GitHub  
-
+https://github.com/durshanamsamyuktha-wq/Churn_Prediction
 
 ---
 
