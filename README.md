@@ -171,7 +171,9 @@ durshanamsamyuktha@gmail.com
 https://www.linkedin.com/in/durshanam-samyuktha-a11204410/
 
 🔗 GitHub  
-https://github.com/durshanamsamyuktha-wq/Churn_Prediction
+https://github.com/durshanamsamyuktha-wq/
+
+
 
 ---
 
