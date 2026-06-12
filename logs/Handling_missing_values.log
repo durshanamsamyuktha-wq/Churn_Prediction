@@ -1,0 +1,100 @@
+2026-06-12 11:31:51,594 - INFO - Before replacing Train null values : gender               0
+SeniorCitizen        0
+Partner              0
+Dependents           0
+tenure               0
+PhoneService         0
+MultipleLines        0
+InternetService      0
+OnlineSecurity       0
+OnlineBackup         0
+DeviceProtection     0
+TechSupport          0
+StreamingTV          0
+StreamingMovies      0
+Contract             0
+PaperlessBilling     0
+PaymentMethod        0
+MonthlyCharges       0
+TotalCharges        11
+Sim                  0
+dtype: int64
+2026-06-12 11:31:51,603 - INFO - Before replacing Test null values : gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+TotalCharges        0
+Sim                 0
+dtype: int64
+2026-06-12 11:31:51,603 - INFO - Before replacing Train column  Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Sim'],
+      dtype='str')
+2026-06-12 11:31:51,604 - INFO - Before replacing Train column shape (5634, 20)
+2026-06-12 11:31:51,604 - INFO - Before replacing Test column shape (1409, 20)
+2026-06-12 11:31:51,668 - INFO - After replacing Train null values : gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+Sim                 0
+TotalChargeshmv     0
+dtype: int64
+2026-06-12 11:31:51,672 - INFO - After replacing Test null values : gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+Sim                 0
+TotalChargeshmv     0
+dtype: int64
+2026-06-12 11:31:51,672 - INFO - After replacing Train column  Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'Sim', 'TotalChargeshmv'],
+      dtype='str')
+2026-06-12 11:31:51,673 - INFO - After replacing Train column shape (5634, 20)
+2026-06-12 11:31:51,673 - INFO - After replacing Test column shape (1409, 20)

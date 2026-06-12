@@ -1,0 +1,43 @@
+2026-06-12 11:31:52,377 - INFO - Before doing Train Categorical to numerical : Index(['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
+       'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection',
+       'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract',
+       'PaperlessBilling', 'PaymentMethod', 'Sim'],
+      dtype='str') 
+ : and its shape (5634, 16)
+2026-06-12 11:31:52,378 - INFO - Before doing Test Categorical to numerical : Index(['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
+       'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection',
+       'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract',
+       'PaperlessBilling', 'PaymentMethod', 'Sim'],
+      dtype='str') 
+ : and its shape (1409, 16)
+2026-06-12 11:31:52,378 - INFO - ============= Applying the nominal encoder(OneHotEncoder) ========================= 
+2026-06-12 11:31:52,378 - INFO -  Columns are gender Partner Dependents
+2026-06-12 11:31:52,467 - INFO - Before doing Train Categorical to numerical : Index(['PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'Sim', 'gender_Male', 'Partner_Yes', 'Dependents_Yes'],
+      dtype='str') 
+ : and its shape (5634, 16)
+2026-06-12 11:31:52,467 - INFO - Before doing Test Categorical to numerical : Index(['PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'Sim', 'gender_Male', 'Partner_Yes', 'Dependents_Yes'],
+      dtype='str') 
+ : and its shape (1409, 16)
+2026-06-12 11:31:52,468 - INFO - ====================  OrdinalEncoder  =======================
+2026-06-12 11:31:52,603 - INFO - After Odinal X_train_cat Column : (5634, 16) : 
+ : Index(['gender_Male', 'Partner_Yes', 'Dependents_Yes', 'PhoneService_ordinal',
+       'MultipleLines_ordinal', 'InternetService_ordinal',
+       'OnlineSecurity_ordinal', 'OnlineBackup_ordinal',
+       'DeviceProtection_ordinal', 'TechSupport_ordinal',
+       'StreamingTV_ordinal', 'StreamingMovies_ordinal', 'Contract_ordinal',
+       'PaperlessBilling_ordinal', 'PaymentMethod_ordinal', 'Sim_ordinal'],
+      dtype='str')
+2026-06-12 11:31:52,604 - INFO - After Odinal X_test_cat Column : (1409, 16) : 
+ : Index(['gender_Male', 'Partner_Yes', 'Dependents_Yes', 'PhoneService_ordinal',
+       'MultipleLines_ordinal', 'InternetService_ordinal',
+       'OnlineSecurity_ordinal', 'OnlineBackup_ordinal',
+       'DeviceProtection_ordinal', 'TechSupport_ordinal',
+       'StreamingTV_ordinal', 'StreamingMovies_ordinal', 'Contract_ordinal',
+       'PaperlessBilling_ordinal', 'PaymentMethod_ordinal', 'Sim_ordinal'],
+      dtype='str')

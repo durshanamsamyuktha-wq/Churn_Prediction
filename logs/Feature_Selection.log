@@ -1,0 +1,29 @@
+2026-06-12 11:31:52,112 - INFO - before applying Feature Selection Train numerical columns and shapes  
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (5634, 4)
+2026-06-12 11:31:52,113 - INFO - before applying Feature Selection  Test numerical columns and shapes  
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (1409, 4)
+2026-06-12 11:31:52,113 - INFO - ==============constant techinque=================
+2026-06-12 11:31:52,338 - INFO - checking the good columns in train 4:Good columns Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str')
+2026-06-12 11:31:52,338 - INFO - checking the bad columns in train 0:bad columns Index([], dtype='str')
+2026-06-12 11:31:52,340 - INFO - checking the good columns in test 4:Good columns Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str')
+2026-06-12 11:31:52,341 - INFO - checking the bad columns in test 0:bad columns Index([], dtype='str')
+2026-06-12 11:31:52,341 - INFO - ==============quesi constant techinque=================
+2026-06-12 11:31:52,351 - INFO - checking the good columns in train 4:Good columns Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str')
+2026-06-12 11:31:52,351 - INFO - checking the bad columns in train 0:bad columns Index([], dtype='str')
+2026-06-12 11:31:52,352 - INFO - checking the good columns in test 4:Good columns Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str')
+2026-06-12 11:31:52,353 - INFO - checking the bad columns in test 0:bad columns Index([], dtype='str')
+2026-06-12 11:31:52,354 - INFO - the X_train values (5634, 4)
+2026-06-12 11:31:52,354 - INFO - the y_train values (5634,)
+2026-06-12 11:31:52,375 - INFO - Checking the Good Columns: ['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS', 'TotalChargeshmv_yeo_CapMS']

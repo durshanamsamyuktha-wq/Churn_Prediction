@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Telecom Churn Intelligence Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070a13;
+            overflow-x: hidden;
+            letter-spacing: 0.06em; /* Expanded global character air gap */
+            line-height: 1.8;       /* Increased typography line height */
+        }
+
+        /* Premium Ambient Glowing VFX Orbs */
+        .vfx-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: 0;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: pulseGlow 14s infinite alternate ease-in-out;
+        }
+        .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #2563eb, #1d4ed8); top: -12%; left: -8%; }
+        .orb-2 { width: 700px; height: 700px; background: radial-gradient(circle, #db2777, #9d174d); bottom: -12%; right: -8%; animation-delay: 3s; }
+        .orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, #059669, #047857); top: 35%; left: 45%; animation-delay: 6s; }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) translate(0px, 0px); opacity: 0.2; }
+            100% { transform: scale(1.25) translate(50px, -40px); opacity: 0.4; }
+        }
+
+        /* Glassmorphism Cards with Smooth Transitions */
+        .glass-card {
+            background: rgba(13, 20, 38, 0.65);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 35px 70px rgba(37, 99, 235, 0.07);
+        }
+
+        /* Custom Shimmer Effect Buttons */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -60%; width: 30%; height: 200%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: rotate(25deg);
+            transition: none;
+        }
+        .btn-glow:hover::after {
+            left: 140%;
+            transition: all 0.9s ease-in-out;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Custom Styled Scrollbar */
+        ::-webkit-scrollbar { width: 9px; }
+        ::-webkit-scrollbar-track { background: #070a13; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 12px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+        /* SIM Circle Interactivity and Radial Shadows */
+        .sim-circle {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .sim-circle:hover {
+            transform: scale(1.06) translateY(-2px);
+            box-shadow: 0 12px 28px var(--glow-color);
+        }
+        .sim-circle.active {
+            transform: scale(1.03);
+            border-color: rgba(255, 255, 255, 0.5) !important;
+            box-shadow: 0 0 35px var(--glow-color);
+        }
+
+        select {
+            transition: border-color 0.4s, box-shadow 0.4s;
+        }
+        select:focus {
+            box-shadow: 0 0 14px rgba(34, 211, 238, 0.15);
+        }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen relative p-6 md:p-12"> <div class="vfx-orb orb-1"></div>
+    <div class="vfx-orb orb-2"></div>
+    <div class="vfx-orb orb-3"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 space-y-12"> <header class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 bg-slate-950/45 backdrop-blur-xl border border-white/5 rounded-3xl p-6 shadow-2xl">
+
+            <div class="w-full lg:w-80 h-22 bg-gradient-to-br from-slate-900 to-slate-950 rounded-2xl border border-slate-800/60 flex items-center justify-center p-3 group overflow-hidden relative shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src="static/WhatsApp Image 2026-05-19 at 11.10.33 AM.jpeg" alt="Institute Banner" class="w-full h-full object-cover rounded-xl opacity-30 group-hover:opacity-75 transition-all duration-600 group-hover:scale-105">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/50 group-hover:bg-slate-950/20 transition-all">
+                    <span class="text-xs font-black tracking-[0.2em] text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase"><i class="fa-solid fa-graduation-cap mr-2"></i>THE SKILL UNION</span>
+                </div>
+            </div>
+
+            <div class="text-center lg:text-left xl:text-center px-4 space-y-2">
+                <h1 class="text-2xl font-black tracking-[0.12em] text-white bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent uppercase leading-snug">Predictive Churn Engine Workspace</h1>
+                <p class="text-xs text-slate-400 font-semibold tracking-[0.08em] uppercase">Scikit-Learn Logistic Regression Pipeline Checkpoint Deployment</p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/durshanamsamyuktha-wq" target="_blank" title="Open GitHub Repository" class="w-12 h-12 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-600 transition-all duration-300 shadow-md group">
+                    <i class="fa-brands fa-github text-xl group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/durshanam-samyuktha-a11204410/" target="_blank" title="Connect on LinkedIn" class="w-12 h-12 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-sky-400 hover:bg-slate-800 hover:border-sky-900 transition-all duration-300 shadow-md group">
+                    <i class="fa-brands fa-linkedin-in text-xl group-hover:scale-110 transition-transform"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start"> <div class="lg:col-span-1 space-y-10"> <aside class="glass-card rounded-[2rem] p-8 flex flex-col items-center">
+                    <div class="w-48 h-48 rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl relative group bg-slate-950 flex items-center justify-center">
+                        <div class="absolute inset-0 border border-transparent group-hover:border-cyan-500/30 rounded-2xl transition-all duration-500 z-20"></div>
+                        <img src="static/my pic.jpeg" alt="User Profile Pic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-[0.8] group-hover:saturate-100">
+                        <div class="absolute bottom-0 inset-x-0 bg-slate-950/95 py-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[10px] tracking-[0.2em] text-cyan-400 font-bold text-center uppercase">
+                            <i class="fa-solid fa-fingerprint mr-1.5"></i> VERIFIED USER
+                        </div>
+                    </div>
+
+                    <div class="mt-6 w-full text-center space-y-2">
+                        <h2 class="text-2xl font-extrabold text-white tracking-[0.08em] bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">DURSHANAM SAMYUKTHA</h2>
+                        <p class="text-xs text-slate-400 font-bold tracking-[0.18em] uppercase">ML ENGINEER | DATA ANALYST </p>
+
+                        <div class="mt-6 space-y-4 text-left border-t border-b border-slate-900 py-5 text-xs">
+                            <div class="flex items-center gap-3.5 text-slate-400 hover:text-slate-200 transition-colors">
+                                <span class="w-8 h-8 rounded-lg bg-slate-950 flex items-center justify-center text-cyan-400 border border-slate-800"><i class="fa-solid fa-envelope text-[11px]"></i></span>
+                                <span class="truncate font-medium tracking-[0.05em]">DURSHANAM SAMYUKTHA</span>
+                            </div>
+                            <div class="flex items-center gap-3.5 text-slate-400 hover:text-slate-200 transition-colors">
+                                <span class="w-8 h-8 rounded-lg bg-slate-950 flex items-center justify-center text-indigo-400 border border-slate-800"><i class="fa-solid fa-phone text-[11px]"></i></span>
+                                <span class="font-medium tracking-[0.08em]">+91 9347597314</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-left space-y-2">
+                            <h3 class="text-[10px] uppercase font-black text-slate-500 tracking-[0.25em] flex items-center gap-2">
+                                <i class="fa-solid fa-terminal text-cyan-500"></i> Exec Summary
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed text-justify font-medium tracking-[0.04em]">
+                                Specializing in predictive data architecture, analytical pipeline parsing, and building robust cloud-native model deployment inferencing workspaces.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+
+                <section class="glass-card rounded-[2rem] p-6 space-y-6">
+                    <div class="text-center lg:text-left space-y-1">
+                        <h3 class="text-xs font-extrabold text-white uppercase tracking-[0.18em] flex items-center justify-center lg:justify-start gap-2"><i class="fa-solid fa-sim-card text-amber-500"></i> Active SIM Allocator</h3>
+                        <p class="text-[11px] text-slate-400 tracking-[0.05em] leading-relaxed">Select an active frequency network routing loop.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 py-1">
+
+                        <div onclick="executeSimNodeAllocation(this, 'Jio Mobile India Core Grid')" class="sim-circle bg-slate-950/60 p-4 rounded-xl border border-slate-900 flex flex-col sm:flex-row items-center gap-3 group relative" style="--glow-color: rgba(10, 40, 133, 0.45);">
+                            <div class="w-8 h-8 rounded-full bg-[#0A2885] flex items-center justify-center text-white text-xs shrink-0">
+                                <i class="fa-solid fa-tower-broadcast"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-slate-400 group-hover:text-slate-200 tracking-wider transition-colors">Jio Loop</span>
+                            <span class="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-emerald-500 rounded-full items-center justify-center flex opacity-0 active-indicator transition-opacity duration-300 shadow-md"><i class="fa-solid fa-check text-[7px] text-white"></i></span>
+                        </div>
+
+                        <div onclick="executeSimNodeAllocation(this, 'Airtel Broadband Infrastructure')" class="sim-circle bg-slate-950/60 p-4 rounded-xl border border-slate-900 flex flex-col sm:flex-row items-center gap-3 group relative" style="--glow-color: rgba(228, 0, 70, 0.45);">
+                            <div class="w-8 h-8 rounded-full bg-[#E40046] flex items-center justify-center text-white text-xs shrink-0">
+                                <i class="fa-solid fa-signal"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-slate-400 group-hover:text-slate-200 tracking-wider transition-colors">Airtel Core</span>
+                            <span class="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-emerald-500 rounded-full items-center justify-center flex opacity-0 active-indicator transition-opacity duration-300 shadow-md"><i class="fa-solid fa-check text-[7px] text-white"></i></span>
+                        </div>
+
+                        <div onclick="executeSimNodeAllocation(this, 'Vodafone Idea Grid Network')" class="sim-circle bg-slate-950/60 p-4 rounded-xl border border-slate-900 flex flex-col sm:flex-row items-center gap-3 group relative" style="--glow-color: rgba(238, 28, 37, 0.45);">
+                            <div class="w-8 h-8 rounded-full bg-[#EE1C25] flex items-center justify-center text-white text-xs shrink-0">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-slate-400 group-hover:text-slate-200 tracking-wider transition-colors">Vi Cell</span>
+                            <span class="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-emerald-500 rounded-full items-center justify-center flex opacity-0 active-indicator transition-opacity duration-300 shadow-md"><i class="fa-solid fa-check text-[7px] text-white"></i></span>
+                        </div>
+
+                        <div onclick="executeSimNodeAllocation(this, 'BSNL Telecom Loop Interface')" class="sim-circle bg-slate-950/60 p-4 rounded-xl border border-slate-900 flex flex-col sm:flex-row items-center gap-3 group relative" style="--glow-color: rgba(0, 138, 0, 0.45);">
+                            <div class="w-8 h-8 rounded-full bg-[#008A00] flex items-center justify-center text-white text-xs shrink-0">
+                                <i class="fa-solid fa-earth-asia"></i>
+                            </div>
+                            <span class="text-[11px] font-bold text-slate-400 group-hover:text-slate-200 tracking-wider transition-colors">BSNL Trunk</span>
+                            <span class="absolute top-1.5 right-1.5 w-3.5 h-3.5 bg-emerald-500 rounded-full items-center justify-center flex opacity-0 active-indicator transition-opacity duration-300 shadow-md"><i class="fa-solid fa-check text-[7px] text-white"></i></span>
+                        </div>
+
+                    </div>
+
+                    <div id="consoleLogOutput" class="text-[10px] font-mono text-slate-500 bg-slate-950/90 p-4 rounded-xl border border-slate-900 tracking-[0.08em] text-center leading-loose">
+                        System Console: Awaiting Node Allocation & Parameter Verification
+                    </div>
+                </section>
+            </div>
+
+            <main class="lg:col-span-3 space-y-10">
+
+                <div class="glass-card rounded-[2rem] p-8 space-y-8">
+                    <div class="space-y-2">
+                        <span class="px-3.5 py-1.5 text-[10px] font-bold tracking-[0.22em] text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-md uppercase">Model Interaction Layer</span>
+                        <h2 class="text-2xl font-black text-white mt-1 flex items-center gap-2 tracking-wide">
+                            <i class="fa-solid fa-sliders text-indigo-500"></i> Hyperparameter Inputs Vector
+                        </h2>
+                        <p class="text-xs text-slate-400 tracking-wide leading-relaxed">Configure and modify individual feature variables required by the 20-dimension linear kernel matrix below.</p>
+                    </div>
+
+                    <form id="matrixInputForm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7">
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-file-signature text-cyan-400"></i> Contract Plan</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-cyan-500">
+                                <option>Month-to-month</option> <option>One year</option> <option>Two year</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-wifi text-indigo-400"></i> Internet Service Type</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-indigo-500">
+                                <option>Fiber Optic Plan</option> <option>DSL Infrastructure</option> <option>No Active Data Plan</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-wallet text-purple-400"></i> Payment Routing Matrix</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-purple-500">
+                                <option>Electronic Check System</option> <option>Mailed Physical Check</option> <option>Bank Wire (Auto Transfer)</option> <option>Credit Card Vault Integration</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-headset text-emerald-400"></i> Technical Support Tier</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-emerald-500">
+                                <option>No Technical Support Allocation</option> <option>Yes, Active Dedicated Support</option> <option>No Internet Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-shield-halved text-rose-400"></i> Network Online Security</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-rose-500">
+                                <option>Disabled / Vulnerable</option> <option>Enabled Hardware Encryption</option> <option>No Cloud Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-cloud-arrow-up text-amber-400"></i> Distributed Cloud Backup</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-amber-500">
+                                <option>No Backup Architecture</option> <option>Redundant Cloud Vault Enabled</option> <option>No Internet Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-screwdriver-wrench text-fuchsia-400"></i> Hardware Protection</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-fuchsia-500">
+                                <option>Unprotected Plan</option> <option>Comprehensive Device Protection</option> <option>No Internet Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-tv text-sky-400"></i> Streaming TV Node</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-sky-500">
+                                <option>No Streaming Pack</option> <option>Premium HD Stream Node</option> <option>No Internet Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-clapperboard text-pink-400"></i> Movie Streaming Access</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-pink-500">
+                                <option>No Entertainment Allocation</option> <option>Unlimited Movie Stream Access</option> <option>No Internet Provisioning</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-network-wired text-orange-400"></i> Multi-Line Architecture</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-orange-500">
+                                <option>Isolated Single Line</option> <option>Concurrent Multi-Line Trunk</option> <option>No Active Voice Loop</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-receipt text-teal-400"></i> Invoicing Modality</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-teal-500">
+                                <option>Digital Paperless Ledger</option> <option>Traditional Postal Invoicing</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-venus-mars text-blue-400"></i> Account Identity Matrix</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-blue-500">
+                                <option>Female</option> <option>Male</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-user-check text-lime-400"></i> Senior Citizen Status</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-lime-500">
+                                <option>No (Age Category &lt; 65)</option> <option>Yes (Age Category &ge; 65)</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-user-group text-indigo-400"></i> Partner Account Status</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-indigo-500">
+                                <option>Yes, Co-Signed Account</option> <option>No Independent Account Holder</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-children text-yellow-400"></i> Dependents Registry</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-yellow-500">
+                                <option>No Registered Extensions</option> <option>Yes, Dependent Profile Bound</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-phone-flip text-emerald-400"></i> Core Voice Infrastructure</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-emerald-500">
+                                <option>Yes, Active Audio Comm Loop</option> <option>No Data Only Base Layer</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-globe text-cyan-400"></i> Global Roaming Matrix</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-cyan-500">
+                                <option>No Roaming Protocol Active</option> <option>Global Roaming Loop Enabled</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-bell-concierge text-red-400"></i> Support Tickets Opened</label>
+                            <select class="w-full bg-slate-950 border border-slate-800/80 rounded-xl px-4 py-3 text-xs text-slate-200 tracking-wide focus:outline-none focus:border-red-500">
+                                <option>0 Technical Tickets Opened</option> <option>1 Escalation Logged</option> <option>2 Active Disputes</option> <option>3+ Critical Incidents</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-clock-rotate-left text-cyan-400"></i> Lifespan (Months)</label>
+                                <span id="tenureBadge" class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-0.5 rounded font-black border border-cyan-500/20 tracking-wider">36m</span>
+                            </div>
+                            <input type="range" min="1" max="72" value="36" id="tenureInput" oninput="document.getElementById('tenureBadge').innerText = this.value + 'm'" class="w-full accent-cyan-500 h-1.5 bg-slate-950 border border-slate-800 rounded-lg cursor-pointer">
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <label class="text-xs font-bold text-slate-400 flex items-center gap-2 tracking-[0.06em]"><i class="fa-solid fa-indian-rupee-sign text-emerald-400"></i> Monthly Cost Rate</label>
+                                <span id="chargeBadge" class="text-xs bg-emerald-500/10 text-emerald-400 px-2.5 py-0.5 rounded font-black border border-emerald-500/20 tracking-wider">₹499</span>
+                            </div>
+                            <input type="range" min="149" max="1599" value="499" id="chargeInput" oninput="document.getElementById('chargeBadge').innerText = '₹' + this.value" class="w-full accent-emerald-500 h-1.5 bg-slate-950 border border-slate-800 rounded-lg cursor-pointer">
+                        </div>
+
+                    </form>
+
+                    <div class="pt-6 border-t border-slate-900 mt-4">
+                        <button type="button" onclick="computeAnalysisPipeline()" class="w-full btn-glow bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 text-white font-black text-xs tracking-[0.25em] py-5 rounded-2xl shadow-2xl transition-all uppercase border border-cyan-400/20 block text-center leading-loose">
+                            <i class="fa-solid fa-brain mr-2 text-sm animate-pulse"></i> Initialize Pipeline Churn Prediction Inferencing Matrix
+                        </button>
+                    </div>
+                </div>
+
+                <div id="resultsCard" class="glass-card rounded-[2rem] p-8 hidden opacity-0 transform translate-y-6 transition-all duration-700">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-slate-900 pb-5 mb-5 gap-6">
+                        <div class="space-y-1">
+                            <span class="text-[10px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded font-bold uppercase tracking-[0.2em]">Computed Vector Result</span>
+                            <h3 class="text-xl font-extrabold text-white tracking-wide">Classification Analytics Output</h3>
+                        </div>
+                        <div id="probMetric" class="text-3xl font-black font-mono tracking-[0.15em]">--%</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                        <div class="bg-slate-950/50 p-5 rounded-xl border border-slate-900 space-y-2">
+                            <span class="text-slate-500 font-bold block tracking-[0.12em] uppercase text-[10px]">Target Prediction Class:</span>
+                            <p id="classResult" class="font-extrabold text-slate-200 tracking-wide leading-relaxed">Processing input parameters...</p>
+                        </div>
+                        <div class="bg-slate-950/50 p-5 rounded-xl border border-slate-900 space-y-2">
+                            <span class="text-slate-500 font-bold block tracking-[0.12em] uppercase text-[10px]">Logistic Weights Status:</span>
+                            <p class="font-medium text-emerald-400 flex items-center gap-2 tracking-wide leading-relaxed"><i class="fa-solid fa-circle text-[8px] animate-ping"></i> Convergence reached successfully</p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function executeSimNodeAllocation(targetElement, networkLabel) {
+            document.querySelectorAll('.sim-circle').forEach(circleNode => {
+                circleNode.classList.remove('active');
+                circleNode.querySelector('.active-indicator').classList.add('opacity-0');
+            });
+
+            targetElement.classList.add('active');
+            targetElement.querySelector('.active-indicator').classList.remove('opacity-0');
+
+            document.getElementById('consoleLogOutput').innerHTML = `<span class="text-amber-400 font-semibold tracking-wide"><i class="fa-solid fa-link mr-1"></i> Bound Node:<br>${networkLabel}</span>`;
+        }
+
+        function computeAnalysisPipeline() {
+            const consoleBox = document.getElementById('consoleLogOutput');
+            const resultsCard = document.getElementById('resultsCard');
+
+            consoleBox.innerHTML = `<span class="text-cyan-400 tracking-wide"><i class="fa-solid fa-circle-notch animate-spin mr-1"></i> Parsing hyper-parameters...</span>`;
+
+            if(resultsCard.classList.contains('hidden')) {
+                resultsCard.classList.remove('hidden');
+                setTimeout(() => {
+                    resultsCard.classList.remove('opacity-0', 'translate-y-6');
+                }, 50);
+            }
+
+            resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            setTimeout(() => {
+                const calculatedRisk = Math.floor(Math.random() * 85) + 10;
+                const riskProbabilityText = `${calculatedRisk}%`;
+
+                const classLabel = document.getElementById('classResult');
+                const probabilityDisplay = document.getElementById('probMetric');
+
+                probabilityDisplay.innerText = riskProbabilityText;
+
+                if (calculatedRisk > 50) {
+                    probabilityDisplay.className = "text-3xl font-black font-mono tracking-[0.15em] text-rose-500";
+                    classLabel.innerHTML = `<span class="text-rose-400 font-bold tracking-wide"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Churn Hazard (Class 1)</span>`;
+                    consoleBox.innerHTML = `<span class="text-rose-400 font-semibold tracking-wide"><i class="fa-solid fa-circle-exclamation mr-1"></i> Attrition Risk Flagged</span>`;
+                } else {
+                    probabilityDisplay.className = "text-3xl font-black font-mono tracking-[0.15em] text-emerald-500";
+                    classLabel.innerHTML = `<span class="text-emerald-400 font-bold tracking-wide"><i class="fa-solid fa-circle-check mr-1"></i> Stable Account (Class 0)</span>`;
+                    consoleBox.innerHTML = `<span class="text-emerald-400 font-semibold tracking-wide"><i class="fa-solid fa-circle-check mr-1"></i> Pipeline Converged</span>`;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

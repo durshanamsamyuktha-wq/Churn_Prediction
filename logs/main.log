@@ -1,0 +1,352 @@
+2026-06-12 11:31:50,778 - INFO -       gender  SeniorCitizen Partner Dependents  tenure  ... PaperlessBilling              PaymentMethod MonthlyCharges TotalCharges Churn
+0     Female              0     Yes         No       1  ...              Yes           Electronic check          29.85        29.85    No
+1       Male              0      No         No      34  ...               No               Mailed check          56.95       1889.5    No
+2       Male              0      No         No       2  ...              Yes               Mailed check          53.85       108.15   Yes
+3       Male              0      No         No      45  ...               No  Bank transfer (automatic)          42.30      1840.75    No
+4     Female              0      No         No       2  ...              Yes           Electronic check          70.70       151.65   Yes
+...      ...            ...     ...        ...     ...  ...              ...                        ...            ...          ...   ...
+7038    Male              0     Yes        Yes      24  ...              Yes               Mailed check          84.80       1990.5    No
+7039  Female              0     Yes        Yes      72  ...              Yes    Credit card (automatic)         103.20       7362.9    No
+7040  Female              0     Yes        Yes      11  ...              Yes           Electronic check          29.60       346.45    No
+7041    Male              1     Yes         No       4  ...              Yes               Mailed check          74.40        306.6   Yes
+7042    Male              0      No         No      66  ...              Yes  Bank transfer (automatic)         105.65       6844.5    No
+
+[7043 rows x 20 columns]
+2026-06-12 11:31:50,937 - INFO - data set information None
+2026-06-12 11:31:50,938 - INFO - Before Updated dataset Size is: (7043, 20)
+2026-06-12 11:31:51,372 - INFO - After updated file is       gender  SeniorCitizen Partner Dependents  tenure  ...              PaymentMethod MonthlyCharges TotalCharges Churn           Sim
+0     Female              0     Yes         No       1  ...           Electronic check          29.85        29.85    No  Reliance Jio
+1       Male              0      No         No      34  ...               Mailed check          56.95       1889.5    No        Airtel
+2       Male              0      No         No       2  ...               Mailed check          53.85       108.15   Yes        Airtel
+3       Male              0      No         No      45  ...  Bank transfer (automatic)          42.30      1840.75    No       Vi-idea
+4     Female              0      No         No       2  ...           Electronic check          70.70       151.65   Yes  Reliance Jio
+...      ...            ...     ...        ...     ...  ...                        ...            ...          ...   ...           ...
+7038    Male              0     Yes        Yes      24  ...               Mailed check          84.80       1990.5    No        Airtel
+7039  Female              0     Yes        Yes      72  ...    Credit card (automatic)         103.20       7362.9    No          BSNL
+7040  Female              0     Yes        Yes      11  ...           Electronic check          29.60       346.45    No  Reliance Jio
+7041    Male              1     Yes         No       4  ...               Mailed check          74.40        306.6   Yes        Airtel
+7042    Male              0      No         No      66  ...  Bank transfer (automatic)         105.65       6844.5    No       Vi-idea
+
+[7043 rows x 21 columns]
+2026-06-12 11:31:51,372 - INFO - After updated dataset Size is: (7043, 21)
+2026-06-12 11:31:51,374 - INFO - After updated dataset colums is: Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Churn', 'Sim'],
+      dtype='str')
+2026-06-12 11:31:51,374 - INFO - Checking for null values
+2026-06-12 11:31:51,378 - INFO - gender -> 0
+2026-06-12 11:31:51,384 - INFO - SeniorCitizen -> 0
+2026-06-12 11:31:51,386 - INFO - Partner -> 0
+2026-06-12 11:31:51,388 - INFO - Dependents -> 0
+2026-06-12 11:31:51,388 - INFO - tenure -> 0
+2026-06-12 11:31:51,390 - INFO - PhoneService -> 0
+2026-06-12 11:31:51,392 - INFO - MultipleLines -> 0
+2026-06-12 11:31:51,394 - INFO - InternetService -> 0
+2026-06-12 11:31:51,398 - INFO - OnlineSecurity -> 0
+2026-06-12 11:31:51,401 - INFO - OnlineBackup -> 0
+2026-06-12 11:31:51,406 - INFO - DeviceProtection -> 0
+2026-06-12 11:31:51,407 - INFO - TechSupport -> 0
+2026-06-12 11:31:51,411 - INFO - StreamingTV -> 0
+2026-06-12 11:31:51,420 - INFO - StreamingMovies -> 0
+2026-06-12 11:31:51,422 - INFO - Contract -> 0
+2026-06-12 11:31:51,423 - INFO - PaperlessBilling -> 0
+2026-06-12 11:31:51,424 - INFO - PaymentMethod -> 0
+2026-06-12 11:31:51,425 - INFO - MonthlyCharges -> 0
+2026-06-12 11:31:51,427 - INFO - TotalCharges -> 0
+2026-06-12 11:31:51,433 - INFO - Churn -> 0
+2026-06-12 11:31:51,434 - INFO - Sim -> 0
+2026-06-12 11:31:51,434 - INFO - =====================convert string into float========================
+2026-06-12 11:31:51,486 - INFO - None
+2026-06-12 11:31:51,487 - INFO - gender -> 0
+2026-06-12 11:31:51,488 - INFO - SeniorCitizen -> 0
+2026-06-12 11:31:51,488 - INFO - Partner -> 0
+2026-06-12 11:31:51,489 - INFO - Dependents -> 0
+2026-06-12 11:31:51,490 - INFO - tenure -> 0
+2026-06-12 11:31:51,491 - INFO - PhoneService -> 0
+2026-06-12 11:31:51,493 - INFO - MultipleLines -> 0
+2026-06-12 11:31:51,495 - INFO - InternetService -> 0
+2026-06-12 11:31:51,499 - INFO - OnlineSecurity -> 0
+2026-06-12 11:31:51,501 - INFO - OnlineBackup -> 0
+2026-06-12 11:31:51,502 - INFO - DeviceProtection -> 0
+2026-06-12 11:31:51,504 - INFO - TechSupport -> 0
+2026-06-12 11:31:51,505 - INFO - StreamingTV -> 0
+2026-06-12 11:31:51,506 - INFO - StreamingMovies -> 0
+2026-06-12 11:31:51,507 - INFO - Contract -> 0
+2026-06-12 11:31:51,508 - INFO - PaperlessBilling -> 0
+2026-06-12 11:31:51,508 - INFO - PaymentMethod -> 0
+2026-06-12 11:31:51,509 - INFO - MonthlyCharges -> 0
+2026-06-12 11:31:51,509 - INFO - TotalCharges -> 11
+2026-06-12 11:31:51,510 - INFO - Churn -> 0
+2026-06-12 11:31:51,511 - INFO - Sim -> 0
+2026-06-12 11:31:51,516 - INFO - the columns in X :Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Sim'],
+      dtype='str')
+2026-06-12 11:31:51,516 - INFO - the shape of X:(7043, 20)
+2026-06-12 11:31:51,516 - INFO - the shape of y:(7043,)
+2026-06-12 11:31:51,544 - INFO - Columns name in X_train and X_test:Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'TotalCharges', 'Sim'],
+      dtype='str')
+2026-06-12 11:31:51,544 - INFO - shape of X_trian:(5634, 20)
+2026-06-12 11:31:51,544 - INFO - shape of X_test:(1409, 20)
+2026-06-12 11:31:51,547 - INFO - shape before converstion of y_trian:4922     No
+2512     No
+5816     No
+6418     No
+131     Yes
+       ... 
+4703    Yes
+3616     No
+6012    Yes
+5763     No
+6558    Yes
+Name: Churn, Length: 5634, dtype: str
+2026-06-12 11:31:51,551 - INFO - shape before converstion of y_test:5851     No
+843      No
+5442     No
+4792    Yes
+2303    Yes
+       ... 
+459      No
+710     Yes
+1955     No
+5956    Yes
+2628     No
+Name: Churn, Length: 1409, dtype: str
+2026-06-12 11:31:51,555 - INFO - shape after converstion of y_trian:4922    0
+2512    0
+5816    0
+6418    0
+131     1
+       ..
+4703    1
+3616    0
+6012    1
+5763    0
+6558    1
+Name: Churn, Length: 5634, dtype: int64
+2026-06-12 11:31:51,556 - INFO - shape after converstion of y_test:5851    0
+843     0
+5442    0
+4792    1
+2303    1
+       ..
+459     0
+710     1
+1955    0
+5956    1
+2628    0
+Name: Churn, Length: 1409, dtype: int64
+2026-06-12 11:31:51,557 - INFO - shape after converstion of y_trian:(5634,)
+2026-06-12 11:31:51,557 - INFO - shape after converstion of y_test:(1409,)
+2026-06-12 11:31:51,557 - INFO - ================handling missing values===============
+2026-06-12 11:31:51,575 - INFO - Before handling null or missing values of trian data:gender               0
+SeniorCitizen        0
+Partner              0
+Dependents           0
+tenure               0
+PhoneService         0
+MultipleLines        0
+InternetService      0
+OnlineSecurity       0
+OnlineBackup         0
+DeviceProtection     0
+TechSupport          0
+StreamingTV          0
+StreamingMovies      0
+Contract             0
+PaperlessBilling     0
+PaymentMethod        0
+MonthlyCharges       0
+TotalCharges        11
+Sim                  0
+dtype: int64
+2026-06-12 11:31:51,585 - INFO - Before handling null or missing values of test data:gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+TotalCharges        0
+Sim                 0
+dtype: int64
+2026-06-12 11:31:51,685 - INFO - After handling null or missing values of trian data:gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+Sim                 0
+TotalChargeshmv     0
+dtype: int64
+2026-06-12 11:31:51,691 - INFO - After handling null or missing values of test data:gender              0
+SeniorCitizen       0
+Partner             0
+Dependents          0
+tenure              0
+PhoneService        0
+MultipleLines       0
+InternetService     0
+OnlineSecurity      0
+OnlineBackup        0
+DeviceProtection    0
+TechSupport         0
+StreamingTV         0
+StreamingMovies     0
+Contract            0
+PaperlessBilling    0
+PaymentMethod       0
+MonthlyCharges      0
+Sim                 0
+TotalChargeshmv     0
+dtype: int64
+2026-06-12 11:31:51,692 - INFO - ================ Data Splitting =================
+2026-06-12 11:31:51,692 - INFO - Before splitting the Train columns Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'Sim', 'TotalChargeshmv'],
+      dtype='str')
+2026-06-12 11:31:51,693 - INFO - Before splitting the Test columns Index(['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
+       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
+       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
+       'MonthlyCharges', 'Sim', 'TotalChargeshmv'],
+      dtype='str')
+2026-06-12 11:31:51,700 - INFO - After splitting the Train numerical columns Index(['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalChargeshmv'], dtype='str') : 
+ (5634, 4)
+2026-06-12 11:31:51,701 - INFO - After splitting the Train categorical  columns Index(['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
+       'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection',
+       'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract',
+       'PaperlessBilling', 'PaymentMethod', 'Sim'],
+      dtype='str') : 
+ (5634, 16)
+2026-06-12 11:31:51,701 - INFO - After splitting the Test numerical columns Index(['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalChargeshmv'], dtype='str') : 
+ (1409, 4)
+2026-06-12 11:31:51,702 - INFO - After splitting the Test categorical  columns Index(['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines',
+       'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection',
+       'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract',
+       'PaperlessBilling', 'PaymentMethod', 'Sim'],
+      dtype='str') : 
+ (1409, 16)
+2026-06-12 11:31:51,703 - INFO - Before apply Train numerical columns and shapes variable Transformation 
+ : Index(['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalChargeshmv'], dtype='str') : (5634, 4)
+2026-06-12 11:31:51,703 - INFO - Before apply Test numerical columns and shapes variable Transformation 
+ : Index(['SeniorCitizen', 'tenure', 'MonthlyCharges', 'TotalChargeshmv'], dtype='str') : (1409, 4)
+2026-06-12 11:31:52,049 - INFO - After apply Train numerical columns and shapes variable Transformation 
+ : Index(['SeniorCitizen', 'tenure_yeo', 'MonthlyCharges_box',
+       'TotalChargeshmv_yeo'],
+      dtype='str') : (5634, 4)
+2026-06-12 11:31:52,049 - INFO - After apply Test numerical columns and shapes variable Transformation 
+ : Index(['SeniorCitizen', 'tenure_yeo', 'MonthlyCharges_box',
+       'TotalChargeshmv_yeo'],
+      dtype='str') : (1409, 4)
+2026-06-12 11:31:52,049 - INFO - Before apply Train numerical columns and shapes outlier 
+ : Index(['SeniorCitizen', 'tenure_yeo', 'MonthlyCharges_box',
+       'TotalChargeshmv_yeo'],
+      dtype='str') : (5634, 4)
+2026-06-12 11:31:52,051 - INFO - Before apply Test numerical columns and shapes oulier 
+ : Index(['SeniorCitizen', 'tenure_yeo', 'MonthlyCharges_box',
+       'TotalChargeshmv_yeo'],
+      dtype='str') : (1409, 4)
+2026-06-12 11:31:52,111 - INFO - After apply outlier Train numerical columns and shapes  
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (5634, 4)
+2026-06-12 11:31:52,112 - INFO - After apply outlier Test numerical columns and shapes 
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (1409, 4)
+2026-06-12 11:31:52,376 - INFO - After applying Feature Selection Train numerical columns and shapes  
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (5634, 4)
+2026-06-12 11:31:52,376 - INFO - After applying Feature Selection  Test numerical columns and shapes  
+ : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS'],
+      dtype='str') : (1409, 4)
+2026-06-12 11:31:52,606 - INFO - Total Training Data is : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS', 'gender_Male', 'Partner_Yes',
+       'Dependents_Yes', 'PhoneService_ordinal', 'MultipleLines_ordinal',
+       'InternetService_ordinal', 'OnlineSecurity_ordinal',
+       'OnlineBackup_ordinal', 'DeviceProtection_ordinal',
+       'TechSupport_ordinal', 'StreamingTV_ordinal', 'StreamingMovies_ordinal',
+       'Contract_ordinal', 'PaperlessBilling_ordinal', 'PaymentMethod_ordinal',
+       'Sim_ordinal'],
+      dtype='str') 
+ and it shape : (5634, 20) 
+2026-06-12 11:31:52,607 - INFO - Total Testing Data is : Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS', 'gender_Male', 'Partner_Yes',
+       'Dependents_Yes', 'PhoneService_ordinal', 'MultipleLines_ordinal',
+       'InternetService_ordinal', 'OnlineSecurity_ordinal',
+       'OnlineBackup_ordinal', 'DeviceProtection_ordinal',
+       'TechSupport_ordinal', 'StreamingTV_ordinal', 'StreamingMovies_ordinal',
+       'Contract_ordinal', 'PaperlessBilling_ordinal', 'PaymentMethod_ordinal',
+       'Sim_ordinal'],
+      dtype='str') 
+ and it shape : (1409, 20)
+2026-06-12 11:31:52,607 - INFO - ========================= Data Balancing ================================
+2026-06-12 11:31:52,607 - INFO - Before Data Balanced the Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS', 'gender_Male', 'Partner_Yes',
+       'Dependents_Yes', 'PhoneService_ordinal', 'MultipleLines_ordinal',
+       'InternetService_ordinal', 'OnlineSecurity_ordinal',
+       'OnlineBackup_ordinal', 'DeviceProtection_ordinal',
+       'TechSupport_ordinal', 'StreamingTV_ordinal', 'StreamingMovies_ordinal',
+       'Contract_ordinal', 'PaperlessBilling_ordinal', 'PaymentMethod_ordinal',
+       'Sim_ordinal'],
+      dtype='str') and it is shape (5634, 20)
+2026-06-12 11:32:16,498 - INFO - After balancing the data Index(['SeniorCitizen', 'tenure_yeo_tri', 'MonthlyCharges_box_CapMS',
+       'TotalChargeshmv_yeo_CapMS', 'gender_Male', 'Partner_Yes',
+       'Dependents_Yes', 'PhoneService_ordinal', 'MultipleLines_ordinal',
+       'InternetService_ordinal', 'OnlineSecurity_ordinal',
+       'OnlineBackup_ordinal', 'DeviceProtection_ordinal',
+       'TechSupport_ordinal', 'StreamingTV_ordinal', 'StreamingMovies_ordinal',
+       'Contract_ordinal', 'PaperlessBilling_ordinal', 'PaymentMethod_ordinal',
+       'Sim_ordinal'],
+      dtype='str') and it is shape : (8236, 20)
+2026-06-12 11:32:16,499 - INFO -  After balancing the data (8236,)
+2026-06-12 11:32:16,710 - INFO - ===Training Logistic Regression=====
+2026-06-12 11:32:16,867 - INFO - Test data Accuracy : 0.7700496806245565
+2026-06-12 11:32:16,889 - INFO - Confusion Matrix : [[804 252]
+ [ 72 281]]
+2026-06-12 11:32:16,921 - INFO - classification report :               precision    recall  f1-score   support
+
+           0       0.92      0.76      0.83      1056
+           1       0.53      0.80      0.63       353
+
+    accuracy                           0.77      1409
+   macro avg       0.72      0.78      0.73      1409
+weighted avg       0.82      0.77      0.78      1409
+
+2026-06-12 11:32:16,922 - INFO - ====Saving the Scaled and Logistic Regression Model into Pickle File===========
